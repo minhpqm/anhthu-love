@@ -1,24 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
-*{
+
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     overflow: hidden;
 }
-.wrapper{
+
+/* ---------------------- Chung ----------------------  */
+.wrapper {
     position: relative;
     width: 100%;
     height: 100vh;
     overflow: hidden;
 }
-.formInput{
+
+/* ---------------------- Form Input ----------------------  */
+.formInput {
     position: absolute;
     top: -100%;
-    width: 40%;
+    width: 70%; /* Điều chỉnh chiều rộng cho mobile */
     left: 50%;
     transform: translateX(-50%);
     background-color: #EA4C89;
@@ -34,89 +40,108 @@ body{
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     animation: formInput 1s 3s forwards;
 }
+
 @keyframes formInput {
-    0%{
+    0% {
         top: -100%;
     }
-    100%{
+
+    100% {
         top: 20px;
     }
 }
-.formInput::before{
+
+.formInput::before {
     position: absolute;
     content: '';
     width: 8px;
     height: 40px;
     background: #EA4C89;
     top: -30px;
-    left: 20%;
+    left: 10%; /* Điều chỉnh vị trí cho mobile */
     z-index: -10;
 }
-.formInput::after{
+
+.formInput::after {
     position: absolute;
     content: '';
     width: 8px;
     height: 40px;
     background: #EA4C89;
     top: -30px;
-    right: 20%;
+    right: 10%; /* Điều chỉnh vị trí cho mobile */
     z-index: -1;
 }
-.boxHands{
+
+/* ---------------------- Box Hands ----------------------  */
+.boxHands {
     position: absolute;
     display: flex;
     justify-content: center;
     top: -40%;
     animation: handsCat 1s 4s forwards ease-in;
 }
-@keyframes handsCat{
-    0%{
+
+@keyframes handsCat {
+    0% {
         top: -40%;
     }
-    100%{
+
+    100% {
         top: 0px;
     }
 }
-.formInput .handsCat{
+
+.formInput .handsCat {
     position: absolute;
     transform: rotate(180deg);
-    width: 80px;
-    top: -60px;
+    width: 60px; /* Giảm kích thước cho mobile */
+    top: -50px; /* Điều chỉnh vị trí cho mobile */
     animation: hands 1s 5s forwards ease-in-out;
 }
-@keyframes hands{
-    0%{
-        top: -60px;
+
+@keyframes hands {
+    0% {
+        top: -50px;
     }
-    50%,100%{
-        top: -150px;
+
+    50%,
+    100% {
+        top: -120px; /* Điều chỉnh vị trí cho mobile */
     }
 }
-.handsCat img{
+
+.handsCat img {
     width: 100%;
 }
-.boxHands h1{
+
+.boxHands h1 {
     transform: rotate(20deg);
     transform-origin: top left;
     padding-top: 5px;
     color: #fff;
-    font-size: 50px;
+    font-size: 30px; /* Giảm kích thước font cho mobile */
     font-family: 'Dancing Script', cursive;
     animation: textHand 1.5s 6s forwards ease-in;
 }
-@keyframes textHand{
-    0%{
+
+@keyframes textHand {
+    0% {
         transform: rotate(20deg);
         transform-origin: top left;
     }
-    20%,100%{
+
+    20%,
+    100% {
         transform: rotate(0deg);
         transform-origin: top left;
     }
 }
-.boxSlider{
+
+/* ---------------------- Box Slider ----------------------  */
+.boxSlider {
     position: relative;
-    margin-top: 70px;
+    margin-top: 50px; /* Giảm margin-top cho mobile */
     width: 100%;
     display: flex;
     justify-content: center;
@@ -124,66 +149,79 @@ body{
     transition: 1s;
     animation: boxSlider 1s 8s forwards ease-out;
 }
+
 @keyframes boxSlider {
-    0%{
+    0% {
         opacity: 0;
     }
-    100%{
+
+    100% {
         opacity: 1;
     }
 }
-.boxSlider .left, .boxSlider .right{
+
+.boxSlider .left,
+.boxSlider .right {
     position: absolute;
     top: 50%;
     color: #fff;
     transform: translateY(-50%);
-    font-size: 30px;
+    font-size: 24px; /* Giảm kích thước font cho mobile */
     cursor: pointer;
     z-index: 50;
 }
-.left{
-    left: 100px;
-}
-.right{
-    right: 100px;
+
+.left {
+    left: 20px; /* Điều chỉnh vị trí cho mobile */
 }
 
-.listSlider{
+.right {
+    right: 20px; /* Điều chỉnh vị trí cho mobile */
+}
+
+.listSlider {
     position: relative;
-    width: 200px;
-    height: 100px;
+    width: 160px; /* Giảm kích thước slider cho mobile */
+    height: 80px; 
     display: flex;
     overflow: hidden;
     border-radius: 10px;
 }
 
-.listSlider .slider{
+.listSlider .slider {
     width: 100%;
     position: relative;
     transition: 0.5s;
 }
-.listSlider img{
-    width: 200px;
+
+.listSlider img {
+    width: 100%;
     height: 100%;
     object-fit: cover;
 }
-.boxHandsInput{
+
+/* ---------------------- Box Hands Input ----------------------  */
+.boxHandsInput {
     display: flex;
     position: relative;
     top: 15px;
     right: -200%;
-    width: 50%;
+    width: 50%; /* Chiều rộng 100% cho mobile */
     animation: boxInputHands 1s 9s forwards ease-in;
 }
-@keyframes boxInputHands{
-    0%{
-    right: -200%;
+
+@keyframes boxInputHands {
+    0% {
+        right: -200%;
     }
-    60%,100%{
+
+    60%,
+    100% {
         right: 0%;
     }
 }
-.boxHandsInput input{
+
+.boxHandsInput input {
     width: 100%;
     height: 30px;
     border: none;
@@ -191,45 +229,53 @@ body{
     border-radius: 5px;
     padding: 0px 10px;
     font-family: 'Dancing Script', cursive;
-    font-size: 20px;
+    font-size: 16px; /* Giảm kích thước font cho mobile */
     z-index: 11;
     opacity: 0;
     animation: boxSlider 1s 9s forwards ease-out;
 }
 
-.boxHandsInput .handsCatImgInput{
+.boxHandsInput .handsCatImgInput {
     position: absolute;
-    width: 80px;
+    width: 50px; /* Giảm kích thước cho mobile */
     transform: rotate(270deg);
-    top: -140%;
-    right: -30px;
+    top: -100%; /* Điều chỉnh vị trí cho mobile */
+    right: -20px;
     z-index: 100;
     animation: imgHandInput 1s 10s forwards ease-in-out;
 }
+
 @keyframes imgHandInput {
-    0%{
-    right: -30px;
+    0% {
+        right: -20px;
     }
-    70%,100%{
+
+    70%,
+    100% {
         right: -100%;
     }
 }
-.boxHandsInput .handsCatImgInput img{
+
+.boxHandsInput .handsCatImgInput img {
     width: 100%;
 }
-.buttonLove{
+
+/* ---------------------- Button Love ----------------------  */
+.buttonLove {
     display: flex;
     position: relative;
-    margin-top: 25px;
+    margin-top: 15px; /* Giảm margin-top cho mobile */
     align-items: center;
     transform: translateY(-100%);
     z-index: 10;
-    width: 35px;
+    width: 30px; /* Giảm kích thước button cho mobile */
     transition: 0.5s;
+    margin-top: 30px;
 }
-.buttonLove .cricleBtn{
-    width: 40px;
-    height: 40px;
+
+.buttonLove .cricleBtn {
+    width: 30px; /* Giảm kích thước cho mobile */
+    height: 30px; 
     background: #ffb7e4;
     border-radius: 50%;
     display: flex;
@@ -239,10 +285,11 @@ body{
     transform: scale(0);
     transition: 0.5s;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px,
-                inset rgb(255, 255, 255,0.8) 1.95px 1.95px 2.6px,
-                inset rgba(0, 0, 0, 0.2) -1.95px -1.95px 2.6px;
+        inset rgb(255, 255, 255, 0.8) 1.95px 1.95px 2.6px,
+        inset rgba(0, 0, 0, 0.2) -1.95px -1.95px 2.6px;
 }
-.buttonLove .button{
+
+.buttonLove .button {
     position: absolute;
     outline: none;
     width: 0px;
@@ -255,79 +302,107 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 12px;
+    font-size: 10px; /* Giảm kích thước font cho mobile */
     font-family: 'Roboto', sans-serif;
     user-select: none;
     color: #fff;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px,
-                inset rgb(255, 255, 255,0.8) 1.95px 1.95px 2.6px,
-                inset rgba(0, 0, 0, 0.2) -1.55px -1.55px 2.6px;
+        inset rgb(255, 255, 255, 0.8) 1.95px 1.95px 2.6px,
+        inset rgba(0, 0, 0, 0.2) -1.55px -1.55px 2.6px;
 }
-.buttonLove .button:hover{
+
+.buttonLove .button:hover {
     background: #ff9fda;
 }
-.boxCar{
+
+/* ---------------------- Box Car ----------------------  */
+.boxCar {
     position: absolute;
-    bottom: 15%;
+    bottom: 10%; /* Điều chỉnh vị trí cho mobile */
     transform: translateX(-400px);
     z-index: 2;
-    animation: car 4s 1s forwards, car1 2s 5s forwards;
+    animation: car 6s 1s forwards, car1 4s 7s forwards;
 }
-.boxCar img{
-    width: 350px;
+
+.boxCar img {
+    width: 200px; /* Giảm kích thước xe cho mobile */
 }
-@keyframes car{
-    0%{
+
+@keyframes car {
+    0% {
         transform: translateX(-400px);
     }
-    50%,100%{
-        transform: translateX(150px);
+
+    50%,
+    100% {
+        transform: translateX(50px); /* Điều chỉnh vị trí dừng cho mobile */
     }
 }
-.boxHeart{
+
+@keyframes car1 {
+    0% {
+        transform: translateX(50px);
+    }
+
+    100% {
+        transform: translateX(1000px);
+    }
+}
+
+/* ---------------------- Box Heart ----------------------  */
+.boxHeart {
     position: relative;
     width: 100%;
     height: 100vh;
-    animation:  heartX 4s 1s forwards;
+    animation: heartX 4s 1s forwards;
 }
-/* @keyframes car1 {
-    0%{
-        transform: translateX(150px);
-    }
-    100%{
-        transform: translateX(1000px);
-    }
-} */
-.heart1,.heart2,.heart3, .heart4, .heart5, .heart6{
+
+.heart1,
+.heart2,
+.heart3,
+.heart4,
+.heart5,
+.heart6 {
     position: absolute;
-    width: 15px;
-    height: 15px;
+    width: 10px; /* Giảm kích thước trái tim cho mobile */
+    height: 10px;
     background-color: rgb(255, 62, 65);
     transform: scale(0.2) rotate(45deg);
-    bottom: 20%;
-    left: 450px;
+    bottom: 15%; /* Điều chỉnh vị trí cho mobile */
+    left: 250px; /* Điều chỉnh vị trí cho mobile */
     z-index: 1;
 }
-.heart1{
-    animation:love1 4s infinite ease-in 1s;
+
+.heart1 {
+    animation: love1 4s infinite ease-in 1s;
 }
-.heart2{
+
+.heart2 {
     animation: love2 3s infinite ease-in 2s;
 }
-.heart3{
+
+.heart3 {
     animation: love2 5s infinite ease-in 1.5s;
 }
-.heart4{
+
+.heart4 {
     animation: love1 2s infinite ease-in 2s;
 }
-.heart5{
+
+.heart5 {
     animation: love1 2.3s infinite ease-in 0.5s;
 }
-.heart5{
+
+.heart5 {
     animation: love2 2.5s infinite ease-in 1.5s;
 }
-.heart1::before, .heart2::before,
-.heart3::before,.heart4::before, .heart5::before, .heart6::before{
+
+.heart1::before,
+.heart2::before,
+.heart3::before,
+.heart4::before,
+.heart5::before,
+.heart6::before {
     position: absolute;
     content: '';
     width: 100%;
@@ -336,8 +411,13 @@ body{
     left: -50%;
     border-radius: 50%;
 }
-.heart1::after, .heart2::after,
-.heart3::after, .heart4::after, .heart5::after, .heart6::after{
+
+.heart1::after,
+.heart2::after,
+.heart3::after,
+.heart4::after,
+.heart5::after,
+.heart6::after {
     position: absolute;
     content: '';
     width: 100%;
@@ -346,76 +426,97 @@ body{
     top: -50%;
     border-radius: 50%;
 }
-@keyframes love1{
-    0%{
+
+@keyframes love1 {
+    0% {
         opacity: 0;
         transform: scale(0.3) rotate(0deg) translate3d(40px, 0, 0);
     }
-    50%{
+
+    50% {
         opacity: 1;
     }
-    100%{
+
+    100% {
         opacity: 0;
-        transform: scale(0.9) rotate(-15deg) translate3d(-20px, -300px, 0);
+        transform: scale(0.9) rotate(-15deg) translate3d(-20px, -200px,
+                0); /* Điều chỉnh khoảng cách bay cho mobile */
     }
 }
-@keyframes love2{
-    0%{
+
+@keyframes love2 {
+    0% {
         opacity: 0;
         transform: scale(0.2) rotate(10deg) translate3d(50px, 0, 0);
     }
-    50%{
+
+    50% {
         opacity: 1;
     }
-    100%{
+
+    100% {
         opacity: 0;
-        transform: scale(0.7) rotate(5deg) translate3d(-20px, -250px, 0);
+        transform: scale(0.7) rotate(5deg) translate3d(-20px, -150px,
+                0); /* Điều chỉnh khoảng cách bay cho mobile */
     }
 }
+
 @keyframes heartX {
-    0%{
-        left: -500px;
+    0% {
+        left: -300px; /* Điều chỉnh vị trí bắt đầu cho mobile */
     }
-    50%,100%{
+
+    50%,
+    100% {
         left: 0px;
     }
 }
-.boxLine{
+
+/* ---------------------- Box Line ----------------------  */
+.boxLine {
     position: relative;
-    width: 1000px;
+    width: 100vw; /* Sử dụng viewport width cho mobile */
     height: 100vh;
     margin: auto;
     overflow: hidden;
     z-index: 50;
 }
+
 .ground-line {
     width: 100%;
     position: absolute;
-    bottom: 15%;
+    bottom: 10%; /* Điều chỉnh vị trí cho mobile */
     left: 0;
     overflow: hidden;
     height: 6px;
 }
+
 .ground-line div {
     width: 2000px;
     font-size: 0;
     animation: roadLine 3s infinite linear;
 }
+
 .ground-line .line1 {
     width: 80px;
 }
+
 .ground-line .line2 {
     width: 300px;
 }
+
 .ground-line .line3 {
     width: 40px;
 }
+
 .ground-line .line4 {
     width: 200px;
 }
+
 .ground-line .line5 {
     width: 280px;
 }
+
 .ground-line span {
     height: 6px;
     display: inline-block;
@@ -426,28 +527,23 @@ body{
     vertical-align: bottom;
     margin-right: 20px;
 }
-@keyframes roadLine{
+
+@keyframes roadLine {
     0% {
         -webkit-transform: translate(0, 0);
         -moz-transform: translate(0, 0);
         transform: translate(0, 0);
     }
-    
+
     100% {
         -webkit-transform: translate(-1000px, 0);
         -moz-transform: translate(-1000px, 0);
         transform: translate(-1000px, 0);
     }
 }
-/* .ground-line::before{
-    position: absolute;
-    content: '';
-    width: 100%;
-    height: 100%;
-    background: repeating-linear-gradient(90deg, transparent 0, transparent 30%, #333 30%, #333 100%);
-    background-size: 70px;
-} */
-.loadingLove{
+
+/* ---------------------- Loading Love ----------------------  */
+.loadingLove {
     position: absolute;
     width: 100%;
     min-height: 100vh;
@@ -459,6 +555,7 @@ body{
     z-index: 100;
     background-color: #fff;
 }
+
 .rhombus {
     border-radius: 10px;
     height: 75px;
@@ -505,12 +602,14 @@ body{
     animation-iteration-count: infinite;
     /*animation-direction: alternate;*/
 }
+
 @keyframes change1 {
     0%,
     25% {
         margin-top: 0px;
         margin-left: 0px;
     }
+
     50%,
     75% {
         margin-top: 30px;
@@ -524,28 +623,35 @@ body{
         margin-top: 30px;
         margin-left: 0px;
     }
+
     75%,
     100% {
         margin-top: 0px;
         margin-left: 30px;
     }
 }
-.element, .heartRain{
+
+.element,
+.heartRain {
     position: absolute;
     pointer-events: none;
     transition: 1s;
 }
-.letters{
+
+.letters {
     position: absolute;
-    width: 65px;
+    width: 45px; /* Giảm kích thước thư cho mobile */
     transition: 10s ease-in-out;
     cursor: pointer;
     z-index: 1000;
 }
-.letters img{
+
+.letters img {
     width: 100%;
 }
-.wrapperLetterForm{
+
+/* ---------------------- Wrapper Letter Form ----------------------  */
+.wrapperLetterForm {
     position: absolute;
     top: 0;
     left: 0;
@@ -555,44 +661,50 @@ body{
     background: rgba(0, 0, 0, 0.7);
     display: none;
 }
-.boxLetter{
+
+.boxLetter {
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.boxLetter .formLetter{
+
+.boxLetter .formLetter {
     position: relative;
-    width: 600px;
-    height: 350px;
+    width: 90%; /* Điều chỉnh chiều rộng form cho mobile */
+    height: 80%; /* Điều chỉnh chiều cao form cho mobile */
     background-color: #FFEBEB;
     border-radius: 20px;
     z-index: 100;
     padding: 20px 15px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-.formLetter .wrapperLetter{
+
+.formLetter .wrapperLetter {
     position: relative;
     width: 100%;
     height: 100%;
     border: 2px dashed #FF6666;
     border-radius: inherit;
     display: flex;
+    flex-direction: column; /* Chuyển thành dạng cột cho mobile */
 }
-.boxLetter .before{
+
+.boxLetter .before {
     position: absolute;
-    width: 600px;
-    height: 350px;
+    width: 90%; /* Điều chỉnh chiều rộng cho mobile */
+    height: 80%; /* Điều chỉnh chiều cao cho mobile */
     background: #fff;
     transform: rotate(-15deg);
     border-radius: 20px;
     z-index: 10;
 }
-.formLetter .heartLetter{
+
+.formLetter .heartLetter {
     position: absolute;
-    width: 30px;
-    height: 30px;
+    width: 20px; /* Giảm kích thước trái tim cho mobile */
+    height: 20px; 
     border-radius: 50%;
     background: #FFEBEB;
     display: flex;
@@ -600,22 +712,27 @@ body{
     align-items: center;
     z-index: 10;
 }
-.heartLetter .heartLetterItem{
+
+.heartLetter .heartLetterItem {
     position: relative;
-    width: 10px;
-    height: 10px;
+    width: 8px; /* Giảm kích thước trái tim cho mobile */
+    height: 8px; 
     transform: rotate(45deg);
     background: #FF6666;
 }
-.heartLetter:first-child{
+
+.heartLetter:first-child {
     right: 5px;
     top: 10px;
 }
-.heartLetter:nth-child(2){
+
+.heartLetter:nth-child(2) {
     left: 5px;
     bottom: 10px;
 }
-.heartLetterItem::before, .heartLetterItem::after{
+
+.heartLetterItem::before,
+.heartLetterItem::after {
     position: absolute;
     content: '';
     width: 100%;
@@ -623,82 +740,99 @@ body{
     border-radius: 50%;
     background: inherit;
 }
-.heartLetterItem::before{
+
+.heartLetterItem::before {
     top: -50%;
 }
-.heartLetterItem::after{
+
+.heartLetterItem::after {
     left: -50%;
 }
-.giftbox{
+
+.giftbox {
     position: relative;
-    width: 40%;
-    height: 100%;
+    width: 10%; /* Chiều rộng 100% cho mobile */
+    height: 10%; /* Điều chỉnh chiều cao cho mobile */
+    display: flex;
+    justify-content: center;
 }
-.giftbox .img{
+
+.giftbox .img {
     position: absolute;
-    width: 180px;
+    width: 80%; /* Điều chỉnh kích thước hộp quà cho mobile */
     bottom: -10px;
-    left: 50px;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 100;
 }
-.giftbox img{
+
+.giftbox img {
     width: 100%;
 }
-.textLetter{
+
+.textLetter {
     position: relative;
-    width: 60%;
+    width: 100%; /* Chiều rộng 100% cho mobile */
+    height: 50%; /* Điều chỉnh chiều cao cho mobile */
     flex-direction: column;
     display: flex;
     align-items: center;
     user-select: none;
 }
-.textLetter h2{
+
+.textLetter h2 {
     margin-top: 20px;
-    font-size: 30px;
+    font-size: 24px; /* Giảm kích thước font cho mobile */
     font-family: 'Dancing Script', cursive;
 }
-.textLetter .contentLetter{
-    font-size: 19px;
+
+.textLetter .contentLetter {
+    font-size: 16px; /* Giảm kích thước font cho mobile */
     text-align: center;
     padding: 0px 10px;
     margin-top: 10px;
     font-family: 'Dancing Script', cursive;
-
 }
-.fa-xmark{
+
+.fa-xmark {
     position: absolute;
-    right: 20px;
-    top: 20px;
+    right: 10px; /* Điều chỉnh vị trí cho mobile */
+    top: 10px; 
     color: #fff;
     cursor: pointer;
-    font-size: 25px;
+    font-size: 20px; /* Giảm kích thước icon cho mobile */
 }
-.show{
+
+.show {
     display: block;
 }
-.heartAnimation{
+
+.heartAnimation {
     position: absolute;
-    width: 200px;
+    width: 150px; /* Giảm kích thước animation cho mobile */
     bottom: 0;
 }
-.heartAnimation img{
-    width: 100%;
-}
-.mewmew1, .mewmew2{
-    position: absolute;
-    width: 90px;
-}
-.mewmew1{
-    bottom: 0;
-    left: 0;
-}
-.mewmew2{
-    bottom: 0;
-    right: 0;
-}
-.mewmew1 img, .mewmew2 img{
+
+.heartAnimation img {
     width: 100%;
 }
 
+.mewmew1,
+.mewmew2 {
+    position: absolute;
+    width: 60px; /* Giảm kích thước mewmew cho mobile */
+    bottom: 0;
+}
 
+.mewmew1 {
+    left: 10px; /* Điều chỉnh vị trí cho mobile */
+}
 
+.mewmew2 {
+    right: 10px; /* Điều chỉnh vị trí cho mobile */
+}
+
+.mewmew1 img,
+.mewmew2 img {
+    width: 100%;
+}
